@@ -1,0 +1,18 @@
+enable(0xA8)                       expected=0xA9 actual=0xA9 PASS
+enable(0xA9)                       expected=0xA9 actual=0xA9 PASS
+set_mode(0xAB, 2)                  expected=0xAD actual=0xAD PASS
+set_mode(0xAF, 2)                  expected=0xAD actual=0xAD PASS
+disable(0xAD)                      expected=0xAC actual=0xAC PASS
+is_ready(0x09)                     expected=0x01 actual=0x01 PASS
+is_ready(0x01)                     expected=0x00 actual=0x00 PASS
+enable(0xFE)                       expected=0xFF actual=0xFF PASS
+disable(0xFE)                      expected=0xFE actual=0xFE PASS
+disable(0xFF)                      expected=0xFE actual=0xFE PASS
+set_mode(0xFF, 0)                  expected=0xF9 actual=0xF9 PASS
+set_mode(0xFF, 1)                  expected=0xFB actual=0xFB PASS
+set_mode(0xFF, 2)                  expected=0xFD actual=0xFD PASS
+set_mode(0x00, 2)                  expected=0x04 actual=0x04 PASS
+is_ready(0xFF)                     expected=0x01 actual=0x01 PASS
+is_ready(0xF7)                     expected=0x00 actual=0x00 PASS
+exhaustive invariant checks (256)  PASS
+SUMMARY: 17 named checks, 0 failures
