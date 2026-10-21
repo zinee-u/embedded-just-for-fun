@@ -1,0 +1,28 @@
+gcc-16 -Iinclude -Ihost -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -E src/memory_map.c -o build/src/memory_map.i
+gcc-16 -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -S build/src/memory_map.i -o build/src/memory_map.s
+gcc-16 -g -c build/src/memory_map.s -o build/src/memory_map.o
+gcc-16 -Iinclude -Ihost -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -E src/clock.c -o build/src/clock.i
+gcc-16 -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -S build/src/clock.i -o build/src/clock.s
+gcc-16 -g -c build/src/clock.s -o build/src/clock.o
+gcc-16 -Iinclude -Ihost -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -E src/led.c -o build/src/led.i
+gcc-16 -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -S build/src/led.i -o build/src/led.s
+gcc-16 -g -c build/src/led.s -o build/src/led.o
+gcc-16 -Iinclude -Ihost -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -E src/app.c -o build/src/app.i
+gcc-16 -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -S build/src/app.i -o build/src/app.s
+gcc-16 -g -c build/src/app.s -o build/src/app.o
+gcc-16 -Iinclude -Ihost -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -E host/fake_hal.c -o build/host/fake_hal.i
+gcc-16 -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -S build/host/fake_hal.i -o build/host/fake_hal.s
+gcc-16 -g -c build/host/fake_hal.s -o build/host/fake_hal.o
+gcc-16 -Iinclude -Ihost -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -E tests/test_mission.c -o build/tests/test_mission.i
+gcc-16 -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -S build/tests/test_mission.i -o build/tests/test_mission.s
+gcc-16 -g -c build/tests/test_mission.s -o build/tests/test_mission.o
+gcc-16 -Iinclude -Ihost -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -E tests/test_student.c -o build/tests/test_student.i
+gcc-16 -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -S build/tests/test_student.i -o build/tests/test_student.s
+gcc-16 -g -c build/tests/test_student.s -o build/tests/test_student.o
+gcc-16 -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g  build/src/memory_map.o build/src/clock.o build/src/led.o build/src/app.o build/host/fake_hal.o build/tests/test_mission.o build/tests/test_student.o  -o build/mission-tests
+./build/mission-tests
+Public checks: 319, failures: 0
+Student test function returned (review at least 2 assertions in PR).
+RESULT: PASS - Host API-contract tests only; no board execution.
+
+make test exit code: 0
