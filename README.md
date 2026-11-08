@@ -12,8 +12,9 @@
 | 05회차 | TC387QP GPIO, STM Timer, Polling, 주기 수집 | [주기 수집 기능 개선](weeks/week05/README.md) | [세 Module과 Host test](weeks/week05/starter/) |
 | 06회차 | TC387QP Interrupt, ISR, 공유 데이터 처리 | [Interrupt 수집 개선](weeks/week06/README.md) | [세 Module과 Host Test](weeks/week06/starter/) |
 | 07회차 | TC387QP UART 기록, Frame, Parsing, 부분 송신 | [UART 기록·Parsing 개선](weeks/week07/README.md) | [네 Module과 Host Test](weeks/week07/starter/) |
+| 08회차 | TC387QP I2C0 Pin 출력 설정, LIS3DH Register 읽기 | [I2C Pin 설계와 Sensor 읽기](weeks/week08/README.md) | [C 실습과 Host Test](weeks/week08/starter/) |
 
-`week02`, `week03`, `week04`, `week05`, `week06`, `week07`은 수업 회차입니다. 달력의 월별 주차나 제출 마감일을 뜻하지 않습니다.
+`week02`, `week03`, `week04`, `week05`, `week06`, `week07`, `week08`은 수업 회차입니다. 달력의 월별 주차나 제출 마감일을 뜻하지 않습니다.
 
 **4주차를 시작한다면 [4주차 전용 제출 안내](weeks/week04/SUBMISSION.md)를 따라 하세요.** MCU 요구값을 네 `.c` Module에 구현하고, Host test와 Build 단계 확인을 마친 뒤 실제 PR을 제출합니다.
 
@@ -22,6 +23,8 @@
 **06회차는 [풀이 접근법](weeks/week06/APPROACH.md)을 함께 제공합니다.** 학습 목표·공식 근거·11개 근본 원인을 참고해 세 C Module을 직접 개선하고, 추가 Test와 실행 결과를 [06회차 제출 안내](weeks/week06/SUBMISSION.md)에 따라 PR로 제출하세요.
 
 **07회차는 [원본 실행 Log](weeks/week07/baseline/README.md)와 [풀이 접근법](weeks/week07/APPROACH.md)을 함께 제공합니다.** UART 기록의 현상·원인·해결방안을 근거로 정리하고 네 C Module을 직접 개선합니다. 분할·합쳐진 RX 입력과 부분 TX 수용을 검증한 뒤, 추가 Test와 실행 결과를 [07회차 제출 안내](weeks/week07/SUBMISSION.md)에 따라 PR로 제출하세요.
+
+08회차는 Datasheet에서 `P02.4`와 `P02.5`의 출력 기능을 찾아 I2C0 신호에 연결합니다. 두 Pin의 설정을 C로 작성하고, 설정을 한 가지씩 바꿨을 때의 실행 결과를 [08회차 PR 제출 안내](weeks/week08/SUBMISSION.md)에 따라 기록합니다.
 
 ## 과제 풀기
 
