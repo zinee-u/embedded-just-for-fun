@@ -1,0 +1,26 @@
+﻿gcc -D__USE_MINGW_ANSI_STDIO=1 -Iinclude -Ihost -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -E src/memory_map.c -o build/src/memory_map.i
+gcc -D__USE_MINGW_ANSI_STDIO=1 -Iinclude -Ihost -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -E src/clock.c -o build/src/clock.i
+gcc -D__USE_MINGW_ANSI_STDIO=1 -Iinclude -Ihost -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -E src/led.c -o build/src/led.i
+gcc -D__USE_MINGW_ANSI_STDIO=1 -Iinclude -Ihost -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -E src/app.c -o build/src/app.i
+gcc -D__USE_MINGW_ANSI_STDIO=1 -Iinclude -Ihost -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -E host/fake_hal.c -o build/host/fake_hal.i
+gcc -D__USE_MINGW_ANSI_STDIO=1 -Iinclude -Ihost -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -E tests/test_mission.c -o build/tests/test_mission.i
+gcc -D__USE_MINGW_ANSI_STDIO=1 -Iinclude -Ihost -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -E tests/test_student.c -o build/tests/test_student.i
+gcc -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -S build/src/memory_map.i -o build/src/memory_map.s
+gcc -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -S build/src/clock.i -o build/src/clock.s
+gcc -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -S build/src/led.i -o build/src/led.s
+gcc -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -S build/src/app.i -o build/src/app.s
+gcc -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -S build/host/fake_hal.i -o build/host/fake_hal.s
+gcc -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -S build/tests/test_mission.i -o build/tests/test_mission.s
+gcc -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g -S build/tests/test_student.i -o build/tests/test_student.s
+gcc -g -c build/src/memory_map.s -o build/src/memory_map.o
+gcc -g -c build/src/clock.s -o build/src/clock.o
+gcc -g -c build/src/led.s -o build/src/led.o
+gcc -g -c build/src/app.s -o build/src/app.o
+gcc -g -c build/host/fake_hal.s -o build/host/fake_hal.o
+gcc -g -c build/tests/test_mission.s -o build/tests/test_mission.o
+gcc -g -c build/tests/test_student.s -o build/tests/test_student.o
+gcc -std=c11 -Wall -Wextra -Werror -pedantic -O0 -g  build/src/memory_map.o build/src/clock.o build/src/led.o build/src/app.o build/host/fake_hal.o build/tests/test_mission.o build/tests/test_student.o  -o build/mission-tests.exe
+Generated: build/src/*.i, *.s, *.o and Host executable build/mission-tests.exe
+Executable format depends on the Host OS; this is not an MCU firmware image.
+
+make -B stages exit code: 0
