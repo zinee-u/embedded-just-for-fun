@@ -1,0 +1,18 @@
+PASS value 0 -> OFF
+PASS value 128 -> OFF
+PASS value 255 -> OFF
+PASS value 300 -> OFF
+PASS value 499 -> OFF
+PASS value 500 -> ON
+PASS value 1000 -> ON
+PASS value 1001 -> reject
+PASS high-byte bit7 set 0x8000 -> reject
+PASS uint16 max 65535 -> reject
+PASS NULL input
+PASS length 0 with valid address
+PASS length 1 with 1-byte array
+PASS length 3 with 3-byte array
+PASS NULL rain output
+PASS NULL command output
+PASS same OFF state still sends a new command
+SUMMARY: 17 passed, 0 failed
