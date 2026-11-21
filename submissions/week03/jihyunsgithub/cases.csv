@@ -1,0 +1,8 @@
+function,input_ctrl_or_status,input_mode,expected_return,actual_return,changed_bits,preserved_bits
+enable,0xA8,,0xA9,0xA9,CTRL bit0 set,CTRL bits7:1
+enable,0xA9,,0xA9,0xA9,CTRL bit0 remains 1,CTRL bits7:1
+set_mode,0xAB,2,0xAD,0xAD,CTRL bits2:1 become 10,CTRL bits7:3 and bit0
+set_mode,0xAF,2,0xAD,0xAD,CTRL bits2:1 become 10,CTRL bits7:3 and bit0
+disable,0xAD,,0xAC,0xAC,CTRL bit0 cleared,CTRL bits7:1
+is_ready,0x09,,1,1,STATUS bit3 read only,no STATUS bits changed
+is_ready,0x01,,0,0,STATUS bit3 read only,no STATUS bits changed
