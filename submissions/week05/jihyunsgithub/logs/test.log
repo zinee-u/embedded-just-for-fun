@@ -1,0 +1,6 @@
+mkdir -p build
+cc -Iinclude -Ihost -Itests -std=c11 -Wall -Wextra -Wpedantic -Werror -O2 src/timebase.c src/board_io.c src/collector.c host/fake_platform.c tests/test_mission.c tests/test_student.c  -o build/mission-tests
+./build/mission-tests
+361 checks, 0 failures
+
+make test exit code: 0
