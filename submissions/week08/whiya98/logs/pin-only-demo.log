@@ -1,0 +1,6 @@
+cc -Iinclude -Ihost -std=c11 -Wall -Wextra -Wpedantic -Werror -O2 src/sensor.c host/host.c host/demo.c -o build/demo
+./build/demo
+I2C0 SDA=P02.4 SCL=P02.5 FAIL
+SDA=O0/open-drain SCL=O5/push-pull
+Fixture: WHO_AM_I=0x33  OUT_X_L=0x00  OUT_X_H=0xFF  seq=42
+init=0 sample=0 UART=0
