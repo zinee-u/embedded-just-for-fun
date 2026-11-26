@@ -1,0 +1,13 @@
+cc -Iinclude -Ihost -std=c11 -Wall -Wextra -Wpedantic -Werror -O2 src/sensor.c host/host.c host/demo.c -o build/demo
+./build/demo
+I2C0 SDA=P02.4 SCL=P02.5 OK
+SDA=O5/open-drain SCL=O5/open-drain
+Fixture: WHO_AM_I=0x33  OUT_X_L=0x00  OUT_X_H=0xFF  seq=42
+1 R address7=0x18 sub=0x0F len=1 OK
+2 W address7=0x18 sub=0x23 len=1 value=0x88 OK
+3 W address7=0x18 sub=0x20 len=1 value=0x57 OK
+4 R address7=0x18 sub=0xA8 len=2 OK
+init=1 sample=1 UART=1
+S,42,2032,0
+
+make demo exit: 0

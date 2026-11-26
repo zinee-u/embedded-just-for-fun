@@ -1,0 +1,24 @@
+mkdir -p build
+cc -Iinclude -Ihost -std=c11 -Wall -Wextra -Wpedantic -Werror -O2 src/sensor.c host/host.c tests/test_sensor.c tests/test_student.c -o build/test_sensor
+./build/test_sensor
+[PASS] board / I2C0 and SDA-SCL pin numbers
+[PASS] board / SDA and SCL output O5
+[PASS] board / SDA and SCL open-drain
+[PASS] board / I2C0 SDA P02.4 SCL P02.5 reads ID
+[PASS] board / swapped pins disconnect the Sensor
+[PASS] init / address7, ID read, CTRL_REG4, CTRL_REG1
+[PASS] init / changed ID after success
+[PASS] init / ID read failure
+[PASS] init / CTRL_REG4 write failure
+[PASS] init / CTRL_REG1 write failure
+[PASS] sample / not ready or NULL
+[FAIL] sample / one combined read
+[FAIL] decode / positive, distinct Bytes (20 01 -> 18)
+[FAIL] decode / negative, equal Bytes (F0 F0 -> -241)
+[FAIL] sample / read failure leaves UART empty
+[PASS] UART / raw zero
+[FAIL] UART / raw -16
+[FAIL] UART / raw minimum
+[FAIL] UART / raw maximum and seq maximum
+fixed: 12/19 PASS; added Test failures: 0
+make: *** [Makefile:15: test] Error 1
